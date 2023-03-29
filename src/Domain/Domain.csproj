@@ -25,4 +25,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <!-- Project references -->
+  <ItemGroup>
+    <PackageReference Include="CSharpFunctionalExtensions" Version="2.38.1"/>
+    <PackageReference Include="ShopSharp.Core.Domain" Version="0.3.0"/>
+  </ItemGroup>
+
 </Project>
