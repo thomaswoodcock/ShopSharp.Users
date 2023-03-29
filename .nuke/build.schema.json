@@ -74,7 +74,8 @@
             "enum": [
               "Clean",
               "Compile",
-              "Restore"
+              "Restore",
+              "UnitTest"
             ]
           }
         },
@@ -90,7 +91,8 @@
             "enum": [
               "Clean",
               "Compile",
-              "Restore"
+              "Restore",
+              "UnitTest"
             ]
           }
         },

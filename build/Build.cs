@@ -1,6 +1,7 @@
 using Nuke.Common;
 using Nuke.Common.CI.GitHubActions;
 using Nuke.Common.ProjectModel;
+using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.GitVersion;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
@@ -50,5 +51,20 @@ class Build : NukeBuild
                 .EnableNoRestore());
         });
 
-    public static int Main() => Execute<Build>(x => x.Compile);
+    Target UnitTest => _ => _
+        .Description("Runs all unit tests")
+        .DependsOn(Compile)
+        .Executes(() =>
+        {
+            var unitTestProjects = Solution.GetProjects("*.UnitTests");
+
+            DotNetTest(_ => _
+                .SetConfiguration(Configuration)
+                .EnableNoRestore()
+                .EnableNoBuild()
+                .CombineWith(unitTestProjects, (_, project) => _
+                    .SetProjectFile(project)));
+        });
+
+    public static int Main() => Execute<Build>(x => x.UnitTest);
 }
