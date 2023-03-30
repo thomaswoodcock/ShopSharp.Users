@@ -28,7 +28,7 @@
   <!-- Project references -->
   <ItemGroup>
     <PackageReference Include="CSharpFunctionalExtensions" Version="2.38.1"/>
-    <PackageReference Include="ShopSharp.Core.Domain" Version="0.3.0"/>
+    <PackageReference Include="ShopSharp.Core.Domain" Version="0.3.3"/>
   </ItemGroup>
 
 </Project>

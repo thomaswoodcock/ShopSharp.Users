@@ -1,5 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using ShopSharp.Core.Domain.Aggregates;
+using ShopSharp.Core.Domain.Events;
 using ShopSharp.Users.Domain.Events.UserCreated;
 using ShopSharp.Users.Domain.ValueObjects;
 
