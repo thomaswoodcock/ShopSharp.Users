@@ -34,7 +34,7 @@ public class EmailAddressTests
         // Assert
         result
             .Should()
-            .FailWith(EmailAddress.CreateEmailAddressError.EmptyOrWhitespaceEmailAddress);
+            .FailWith(CreateEmailAddressError.EmptyOrWhitespaceEmailAddress);
     }
 
     [Theory]
@@ -49,6 +49,6 @@ public class EmailAddressTests
         // Assert
         result
             .Should()
-            .FailWith(EmailAddress.CreateEmailAddressError.InvalidEmailAddressFormat);
+            .FailWith(CreateEmailAddressError.InvalidEmailAddressFormat);
     }
 }

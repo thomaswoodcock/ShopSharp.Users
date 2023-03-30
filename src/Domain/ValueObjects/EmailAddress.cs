@@ -8,28 +8,6 @@ namespace ShopSharp.Users.Domain.ValueObjects;
 /// </summary>
 public record EmailAddress
 {
-    /// <summary>
-    /// Represents the possible errors that can occur when creating a new email address value object using the <see cref="EmailAddress.Create" />
-    /// factory method.
-    /// </summary>
-    public enum CreateEmailAddressError
-    {
-        /// <summary>
-        /// There is no error.
-        /// </summary>
-        None = 0,
-
-        /// <summary>
-        /// The provided email address is empty or contains only whitespace characters.
-        /// </summary>
-        EmptyOrWhitespaceEmailAddress,
-
-        /// <summary>
-        /// The provided email address does not conform to the standard email address format.
-        /// </summary>
-        InvalidEmailAddressFormat
-    }
-
     private static readonly Regex EmailAddressRegex = new(@"^(.+)@(.+)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
     private EmailAddress(string value)
@@ -69,4 +47,26 @@ public record EmailAddress
     {
         return EmailAddressRegex.IsMatch(emailAddress);
     }
+}
+
+/// <summary>
+/// Represents the possible errors that can occur when creating a new email address value object using the <see cref="EmailAddress.Create" />
+/// factory method.
+/// </summary>
+public enum CreateEmailAddressError
+{
+    /// <summary>
+    /// There is no error.
+    /// </summary>
+    None = 0,
+
+    /// <summary>
+    /// The provided email address is empty or contains only whitespace characters.
+    /// </summary>
+    EmptyOrWhitespaceEmailAddress,
+
+    /// <summary>
+    /// The provided email address does not conform to the standard email address format.
+    /// </summary>
+    InvalidEmailAddressFormat
 }

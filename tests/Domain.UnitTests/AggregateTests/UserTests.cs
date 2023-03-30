@@ -51,7 +51,7 @@ public class UserTests
         // Assert
         result
             .Should()
-            .FailWith(User.CreateUserError.EmptyOrWhitespaceName);
+            .FailWith(CreateUserError.EmptyOrWhitespaceName);
     }
 
     [Theory]
@@ -68,6 +68,6 @@ public class UserTests
         // Assert
         result
             .Should()
-            .FailWith(User.CreateUserError.EmptyOrWhitespacePassword);
+            .FailWith(CreateUserError.EmptyOrWhitespacePassword);
     }
 }
