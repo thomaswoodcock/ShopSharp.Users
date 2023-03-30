@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - `Application` project.
-- `CreateUserCommand` and handler.
+- `CreateUserCommand` with handler and validator.
 
 ### Changed
 
