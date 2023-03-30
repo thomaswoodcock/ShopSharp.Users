@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## v0.1.8 - 2023-03-30
+## v0.2.0 - 2023-03-30
+
+### Added
+
+- `Application` project.
 
 ### Changed
 

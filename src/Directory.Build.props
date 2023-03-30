@@ -1,0 +1,31 @@
+﻿<Project>
+
+  <!-- Framework -->
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Code analysis -->
+  <PropertyGroup>
+    <AnalysisMode>All</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <!-- Compilation -->
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Nullable>enable</Nullable>
+    <Features>strict;nullablePublicOnly</Features>
+  </PropertyGroup>
+
+  <!-- Generated files -->
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- Project references -->
+  <ItemGroup>
+    <PackageReference Include="CSharpFunctionalExtensions" Version="2.38.1"/>
+  </ItemGroup>
+
+</Project>
