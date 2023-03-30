@@ -1,5 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using ShopSharp.Core.Domain.Aggregates;
+using ShopSharp.Core.Domain.Events;
 using ShopSharp.Users.Domain.Events.UserCreated;
 using ShopSharp.Users.Domain.ValueObjects;
 
@@ -10,27 +11,6 @@ namespace ShopSharp.Users.Domain.Aggregates;
 /// </summary>
 public class User : AggregateRoot
 {
-    /// <summary>
-    /// Represents the possible errors that can occur when creating a new user aggregate using the <see cref="User.Create" /> factory method.
-    /// </summary>
-    public enum CreateUserError
-    {
-        /// <summary>
-        /// There is no error.
-        /// </summary>
-        None = 0,
-
-        /// <summary>
-        /// The provided name for the user is empty or contains only whitespace characters.
-        /// </summary>
-        EmptyOrWhitespaceName,
-
-        /// <summary>
-        /// The provided password for the user is empty or contains only whitespace characters.
-        /// </summary>
-        EmptyOrWhitespacePassword
-    }
-
     private User(Guid id, string name, EmailAddress emailAddress, string password)
     {
         Id = id;
@@ -116,4 +96,25 @@ public class User : AggregateRoot
 
         return user;
     }
+}
+
+/// <summary>
+/// Represents the possible errors that can occur when creating a new user aggregate using the <see cref="User.Create" /> factory method.
+/// </summary>
+public enum CreateUserError
+{
+    /// <summary>
+    /// There is no error.
+    /// </summary>
+    None = 0,
+
+    /// <summary>
+    /// The provided name for the user is empty or contains only whitespace characters.
+    /// </summary>
+    EmptyOrWhitespaceName,
+
+    /// <summary>
+    /// The provided password for the user is empty or contains only whitespace characters.
+    /// </summary>
+    EmptyOrWhitespacePassword
 }

@@ -2,33 +2,17 @@
 
   <!-- Framework -->
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>ShopSharp.Users.Domain</RootNamespace>
-  </PropertyGroup>
-
-  <!-- Code analysis -->
-  <PropertyGroup>
-    <AnalysisMode>All</AnalysisMode>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
   <!-- Compilation -->
   <PropertyGroup>
     <AssemblyName>ShopSharp.Users.Domain</AssemblyName>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Nullable>enable</Nullable>
-    <Features>strict;nullablePublicOnly</Features>
-  </PropertyGroup>
-
-  <!-- Generated files -->
-  <PropertyGroup>
-    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <!-- Project references -->
   <ItemGroup>
-    <PackageReference Include="CSharpFunctionalExtensions" Version="2.38.1"/>
-    <PackageReference Include="ShopSharp.Core.Domain" Version="0.3.0"/>
+    <PackageReference Include="ShopSharp.Core.Domain" Version="0.3.3"/>
   </ItemGroup>
 
 </Project>

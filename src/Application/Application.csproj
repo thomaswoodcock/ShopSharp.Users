@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Framework -->
+  <PropertyGroup>
+    <RootNamespace>ShopSharp.Users.Application</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Compilation -->
+  <PropertyGroup>
+    <AssemblyName>ShopSharp.Users.Application</AssemblyName>
+  </PropertyGroup>
+
+  <!-- Project references -->
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj"/>
+  </ItemGroup>
+
+  <!-- Package references -->
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.5.1"/>
+    <PackageReference Include="MediatR" Version="12.0.1"/>
+    <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="7.0.4"/>
+  </ItemGroup>
+
+</Project>
