@@ -1,19 +1,22 @@
 ﻿using ShopSharp.Users.Application.Commands.CreateUser;
+using ShopSharp.Users.Application.Repositories;
 using ShopSharp.Users.Application.Services;
 using ShopSharp.Users.Domain.Aggregates;
 using ShopSharp.Users.Domain.Repositories;
+using ShopSharp.Users.Domain.ValueObjects;
 
 namespace ShopSharp.Users.Domain.CommandTests;
 
 public class CreateUserCommandHandlerTests
 {
     private readonly CreateUserCommandHandler _commandHandler;
+    private readonly IUserReadModelRepository _readModelRepository = Substitute.For<IUserReadModelRepository>();
     private readonly IPasswordHasher _passwordHasher = Substitute.For<IPasswordHasher>();
     private readonly IUserRepository _userRepository = Substitute.For<IUserRepository>();
 
     public CreateUserCommandHandlerTests()
     {
-        _commandHandler = new CreateUserCommandHandler(_passwordHasher, _userRepository);
+        _commandHandler = new CreateUserCommandHandler(_readModelRepository, _passwordHasher, _userRepository);
     }
 
     [Theory]
@@ -71,6 +74,27 @@ public class CreateUserCommandHandlerTests
             .Should()
             .SucceedWith(
                 new CreateUserCommandResponse(newUserId));
+    }
+
+    [Theory]
+    [AutoData]
+    public async Task HandleReturnsEmailAddressAlreadyInUseError(CreateUserCommand command)
+    {
+        // Arrange
+        var emailAddress = $"{Guid.NewGuid()}@example.com";
+        var validCommand = command with { EmailAddress = emailAddress };
+
+        _readModelRepository.ExistsByEmailAsync(
+                Arg.Is<EmailAddress>(email => email.Value == validCommand.EmailAddress))
+            .Returns(true);
+
+        // Act
+        var result = await _commandHandler.Handle(validCommand);
+
+        // Assert
+        result
+            .Should()
+            .FailWith(CreateUserCommandError.EmailAddressAlreadyInUse);
     }
 
     [Theory]
