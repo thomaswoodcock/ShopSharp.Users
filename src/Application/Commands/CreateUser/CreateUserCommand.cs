@@ -38,6 +38,11 @@ public enum CreateUserCommandError
     InvalidEmailAddressFormat,
 
     /// <summary>
+    /// The provided email address for the user is already in use by another user.
+    /// </summary>
+    EmailAddressAlreadyInUse,
+
+    /// <summary>
     /// The provided password for the user is empty or contains only whitespace characters.
     /// </summary>
     EmptyOrWhitespacePassword

@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.3.0 - 2023-03-31
+
+### Changed
+
+- Updated `CreateUserCommandHandler` to check for existing users with the same email address before creating a new user.
+
 ## v0.2.0 - 2023-03-30
 
 ### Added
