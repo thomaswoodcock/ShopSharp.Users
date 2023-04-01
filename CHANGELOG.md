@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.4.0 - 2023-04-01
+
+### Added
+
+- `EventSourcing` project.
+- `EventStoreUserRepository` class.
+
+### Changed
+
+- Unit test project assembly names.
+- Upgrade `ShopSharp.Core.Domain` dependency.
+
+### Fixed
+
+- `Application.UnitTests` root namespace.
+
 ## v0.3.0 - 2023-03-31
 
 ### Changed

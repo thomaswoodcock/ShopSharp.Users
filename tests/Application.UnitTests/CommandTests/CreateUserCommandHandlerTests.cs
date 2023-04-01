@@ -5,7 +5,7 @@ using ShopSharp.Users.Domain.Aggregates;
 using ShopSharp.Users.Domain.Repositories;
 using ShopSharp.Users.Domain.ValueObjects;
 
-namespace ShopSharp.Users.Domain.CommandTests;
+namespace ShopSharp.Users.Application.CommandTests;
 
 public class CreateUserCommandHandlerTests
 {

@@ -5,6 +5,11 @@
     <RootNamespace>ShopSharp.Users.Domain</RootNamespace>
   </PropertyGroup>
 
+  <!-- Compilation -->
+  <PropertyGroup>
+    <AssemblyName>ShopSharp.Users.Domain.UnitTests</AssemblyName>
+  </PropertyGroup>
+
   <!-- Project references -->
   <ItemGroup>
     <ProjectReference Include="..\..\src\Domain\Domain.csproj"/>

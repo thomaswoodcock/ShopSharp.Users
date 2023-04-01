@@ -2,17 +2,17 @@
 
   <!-- Framework -->
   <PropertyGroup>
-    <RootNamespace>ShopSharp.Users.Application</RootNamespace>
+    <RootNamespace>ShopSharp.Users.EventSourcing</RootNamespace>
   </PropertyGroup>
 
   <!-- Compilation -->
   <PropertyGroup>
-    <AssemblyName>ShopSharp.Users.Application.UnitTests</AssemblyName>
+    <AssemblyName>ShopSharp.Users.EventSourcing.UnitTests</AssemblyName>
   </PropertyGroup>
 
   <!-- Project references -->
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Application\Application.csproj"/>
+    <ProjectReference Include="..\..\src\EventSourcing\EventSourcing.csproj"/>
   </ItemGroup>
 
 </Project>

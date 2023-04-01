@@ -20,11 +20,6 @@ public class User : AggregateRoot
     }
 
     /// <summary>
-    /// Gets the unique identifier of the user.
-    /// </summary>
-    public Guid Id { get; private set; }
-
-    /// <summary>
     /// Gets the name of the user.
     /// </summary>
     public string Name { get; private set; }

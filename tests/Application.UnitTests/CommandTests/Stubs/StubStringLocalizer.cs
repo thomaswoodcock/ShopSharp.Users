@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Localization;
 
-namespace ShopSharp.Users.Domain.CommandTests.Stubs;
+namespace ShopSharp.Users.Application.CommandTests.Stubs;
 
 internal class StubStringLocalizer<T> : IStringLocalizer<T>
 {

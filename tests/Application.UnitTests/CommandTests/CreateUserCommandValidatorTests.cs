@@ -1,9 +1,9 @@
 ﻿using FluentValidation.TestHelper;
 using ShopSharp.Users.Application.Commands.CreateUser;
+using ShopSharp.Users.Application.CommandTests.Stubs;
 using ShopSharp.Users.Application.Constants;
-using ShopSharp.Users.Domain.CommandTests.Stubs;
 
-namespace ShopSharp.Users.Domain.CommandTests;
+namespace ShopSharp.Users.Application.CommandTests;
 
 public class CreateUserCommandValidatorTests
 {
