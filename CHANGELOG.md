@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 - Unit test project assembly names.
+- Upgrade `ShopSharp.Core.Domain` dependency.
 
 ### Fixed
 
