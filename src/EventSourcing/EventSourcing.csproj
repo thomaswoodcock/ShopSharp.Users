@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Framework -->
+  <PropertyGroup>
+    <RootNamespace>ShopSharp.Users.EventSourcing</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Compilation -->
+  <PropertyGroup>
+    <AssemblyName>ShopSharp.Users.EventSourcing</AssemblyName>
+  </PropertyGroup>
+
+  <!-- Project references -->
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj"/>
+  </ItemGroup>
+
+  <!-- Package references -->
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.0.1"/>
+  </ItemGroup>
+
+</Project>

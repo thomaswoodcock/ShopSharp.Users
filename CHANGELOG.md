@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## v0.3.1 - 2023-04-01
+## v0.4.0 - 2023-04-01
+
+### Added
+
+- `EventSourcing` project.
+- `EventStoreUserRepository` class.
 
 ### Changed
 
