@@ -5,6 +5,11 @@
     <RootNamespace>ShopSharp.Users.Application</RootNamespace>
   </PropertyGroup>
 
+  <!-- Compilation -->
+  <PropertyGroup>
+    <AssemblyName>ShopSharp.Users.Application.UnitTests</AssemblyName>
+  </PropertyGroup>
+
   <!-- Project references -->
   <ItemGroup>
     <ProjectReference Include="..\..\src\Application\Application.csproj"/>

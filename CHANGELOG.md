@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## v0.3.1 - 2023-04-01
 
+### Changed
+
+- Unit test project assembly names.
+
 ### Fixed
 
 - `Application.UnitTests` root namespace.
