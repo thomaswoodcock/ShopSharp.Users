@@ -2,7 +2,7 @@
 
   <!-- Framework -->
   <PropertyGroup>
-    <RootNamespace>ShopSharp.Users.Domain</RootNamespace>
+    <RootNamespace>ShopSharp.Users.Application</RootNamespace>
   </PropertyGroup>
 
   <!-- Project references -->

@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.3.1 - 2023-04-01
+
+### Fixed
+
+- `Application.UnitTests` root namespace.
+
 ## v0.3.0 - 2023-03-31
 
 ### Changed
