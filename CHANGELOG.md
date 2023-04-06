@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 
 - Separated 'Arrange', 'Act', and 'Assert' sections in all unit tests.
 - Updated NUKE build to run integration tests.
+- `IEventStore` to use `EventRecord` objects.
 
 ## v0.4.0 - 2023-04-01
 
