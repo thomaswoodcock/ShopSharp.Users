@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 - `EventSourcing.EventStoreDB` project with integration tests.
 - `docker-compose.yml` with EventStoreDB service.
 - `IClock` interface with `SystemClock` implementation.
+- `IDomainEventVersioningStrategy` with `SimpleDomainEventVersioningStrategy` implementation.
 
 ### Changed
 
