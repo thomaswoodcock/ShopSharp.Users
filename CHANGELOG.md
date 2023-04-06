@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## v0.4.1 - 2023-04-06
+## v0.5.0 - 2023-04-06
+
+### Added
+
+- `EventSourcing.EventStoreDB` project.
 
 ### Changed
 

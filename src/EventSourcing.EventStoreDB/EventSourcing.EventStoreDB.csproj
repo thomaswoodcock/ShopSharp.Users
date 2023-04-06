@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Framework -->
+  <PropertyGroup>
+    <RootNamespace>ShopSharp.Users.EventSourcing.EventStoreDB</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Compilation -->
+  <PropertyGroup>
+    <AssemblyName>ShopSharp.Users.EventSourcing.EventStoreDB</AssemblyName>
+  </PropertyGroup>
+
+  <!-- Project references -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\EventSourcing\EventSourcing.csproj"/>
+  </ItemGroup>
+
+  <!-- Package references -->
+  <ItemGroup>
+    <PackageReference Include="EventStore.Client.Grpc.Streams" Version="23.0.0"/>
+  </ItemGroup>
+
+</Project>
