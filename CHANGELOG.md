@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 - `IClock` interface with `SystemClock` implementation.
 - `IDomainEventVersioningStrategy` with `SimpleDomainEventVersioningStrategy` implementation.
 - `EventRecord` and factory class.
+- `EventStoreDbEventStore` class.
 
 ### Changed
 
