@@ -1,0 +1,14 @@
+﻿services:
+  eventstoredb:
+    image: eventstore/eventstore:22.10.1-buster-slim
+    environment:
+      - EVENTSTORE_INSECURE=true
+    ports:
+      - "2113:2113"
+    volumes:
+      - eventstoredb-data:/var/lib/eventstore
+      - eventstoredb-logs:/var/log/eventstore
+
+volumes:
+  eventstoredb-data:
+  eventstoredb-logs:

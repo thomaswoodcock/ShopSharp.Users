@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Framework -->
+  <PropertyGroup>
+    <RootNamespace>ShopSharp.Users.EventSourcing.EventStoreDB</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Compilation -->
+  <PropertyGroup>
+    <AssemblyName>ShopSharp.Users.EventSourcing.EventStoreDB.IntegrationTests</AssemblyName>
+  </PropertyGroup>
+
+  <!-- Project references -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\EventSourcing.EventStoreDB\EventSourcing.EventStoreDB.csproj"/>
+  </ItemGroup>
+
+  <!-- Package references -->
+  <ItemGroup>
+    <PackageReference Include="Docker.DotNet" Version="3.125.13"/>
+    <PackageReference Include="Polly.Extensions.Http" Version="3.0.0"/>
+  </ItemGroup>
+
+</Project>

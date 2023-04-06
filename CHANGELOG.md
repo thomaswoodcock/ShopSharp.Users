@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.5.0 - 2023-04-06
+
+### Added
+
+- `EventSourcing.EventStoreDB` project with integration tests.
+- `docker-compose.yml` with EventStoreDB service.
+- `IClock` interface with `SystemClock` implementation.
+- `IDomainEventVersioningStrategy` with `SimpleDomainEventVersioningStrategy` implementation.
+- `EventRecord` and factory class.
+- `EventStoreDbEventStore` class.
+
+### Changed
+
+- Separated 'Arrange', 'Act', and 'Assert' sections in all unit tests.
+- Updated NUKE build to run integration tests.
+- `IEventStore` to use `EventRecord` objects.
+
 ## v0.4.0 - 2023-04-01
 
 ### Added

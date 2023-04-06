@@ -138,7 +138,9 @@ public class CreateUserCommandHandlerTests
     [AutoData]
     public async Task HandleReturnsInvalidEmailAddressFormatError(CreateUserCommand command)
     {
-        // Arrange Act
+        // Arrange
+
+        // Act
         var result = await _commandHandler.Handle(command)
             .ConfigureAwait(false);
 

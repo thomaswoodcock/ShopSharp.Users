@@ -10,7 +10,9 @@ public class EmailAddressTests
     [InlineData("user@subdomain.example.com")]
     public void CreateReturnsNewEmailAddress(string emailAddress)
     {
-        // Arrange Act
+        // Arrange
+
+        // Act
         var result = EmailAddress.Create(emailAddress);
 
         // Assert
@@ -28,7 +30,9 @@ public class EmailAddressTests
     [InlineData(" ")]
     public void CreateReturnsEmptyOrWhitespaceEmailAddressError(string emailAddress)
     {
-        // Arrange Act
+        // Arrange
+
+        // Act
         var result = EmailAddress.Create(emailAddress);
 
         // Assert
@@ -43,7 +47,9 @@ public class EmailAddressTests
     [InlineData("user.example.com")]
     public void CreateReturnsInvalidEmailAddressFormatError(string emailAddress)
     {
-        // Arrange Act
+        // Arrange
+
+        // Act
         var result = EmailAddress.Create(emailAddress);
 
         // Assert
