@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 - Separated 'Arrange', 'Act', and 'Assert' sections in all unit tests.
+- Updated NUKE build to run integration tests.
 
 ## v0.4.0 - 2023-04-01
 

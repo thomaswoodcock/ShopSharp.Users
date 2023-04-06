@@ -10,7 +10,8 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
     "continuous",
     GitHubActionsImage.UbuntuLatest,
     On = new[] { GitHubActionsTrigger.Push },
-    FetchDepth = 0)]
+    FetchDepth = 0,
+    InvokedTargets = new[] { nameof(UnitTest), nameof(IntegrationTest) })]
 class Build : NukeBuild
 {
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
@@ -66,5 +67,20 @@ class Build : NukeBuild
                     .SetProjectFile(project)));
         });
 
-    public static int Main() => Execute<Build>(x => x.UnitTest);
+    Target IntegrationTest => _ => _
+        .Description("Runs all integration tests")
+        .DependsOn(Compile)
+        .Executes(() =>
+        {
+            var integrationTestProjects = Solution.GetProjects("*.IntegrationTests");
+
+            DotNetTest(_ => _
+                .SetConfiguration(Configuration)
+                .EnableNoRestore()
+                .EnableNoBuild()
+                .CombineWith(integrationTestProjects, (_, project) => _
+                    .SetProjectFile(project)));
+        });
+
+    public static int Main() => Execute<Build>(x => x.UnitTest, x => x.IntegrationTest);
 }
