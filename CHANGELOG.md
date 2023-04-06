@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- `EventSourcing.EventStoreDB` project.
+- `EventSourcing.EventStoreDB` project with integration tests.
 - `docker-compose.yml` with EventStoreDB service.
 
 ### Changed
