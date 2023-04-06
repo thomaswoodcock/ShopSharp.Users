@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.4.1 - 2023-04-06
+
+### Changed
+
+- Separated 'Arrange', 'Act', and 'Assert' sections in all unit tests.
+
 ## v0.4.0 - 2023-04-01
 
 ### Added
