@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.5.2 - 2023-04-07
+
+- Renamed `IUserReadModelRepository` to `IUserQueryService`.
+
 ## v0.5.1 - 2023-04-07
 
 ### Changed

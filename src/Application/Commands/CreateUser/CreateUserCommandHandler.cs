@@ -1,6 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
 using MediatR;
-using ShopSharp.Users.Application.Repositories;
 using ShopSharp.Users.Application.Services;
 using ShopSharp.Users.Domain.Aggregates;
 using ShopSharp.Users.Domain.Repositories;
@@ -13,22 +12,22 @@ namespace ShopSharp.Users.Application.Commands.CreateUser;
 /// </summary>
 public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Result<CreateUserCommandResponse, CreateUserCommandError>>
 {
-    private readonly IUserReadModelRepository _readModelRepository;
     private readonly IPasswordHasher _passwordHasher;
+    private readonly IUserQueryService _userQueryService;
     private readonly IUserRepository _userRepository;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CreateUserCommandHandler" /> class.
     /// </summary>
-    /// <param name="readModelRepository">The user read model repository for checking if a user with the provided email address already exists.</param>
+    /// <param name="userQueryService">The user query service for checking if a user with the provided email address already exists.</param>
     /// <param name="passwordHasher">The password hasher to use for hashing user passwords.</param>
     /// <param name="userRepository">The user repository for persisting user data.</param>
     public CreateUserCommandHandler(
-        IUserReadModelRepository readModelRepository,
+        IUserQueryService userQueryService,
         IPasswordHasher passwordHasher,
         IUserRepository userRepository)
     {
-        _readModelRepository = readModelRepository;
+        _userQueryService = userQueryService;
         _passwordHasher = passwordHasher;
         _userRepository = userRepository;
     }
@@ -59,7 +58,7 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Resul
             return MapCreateEmailAddressErrorToCreateUserCommandError(emailAddressResult.Error);
         }
 
-        var userExists = await _readModelRepository.ExistsByEmailAsync(emailAddressResult.Value, cancellationToken)
+        var userExists = await _userQueryService.ExistsByEmailAsync(emailAddressResult.Value, cancellationToken)
             .ConfigureAwait(false);
 
         if (userExists)

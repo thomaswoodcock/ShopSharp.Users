@@ -1,5 +1,4 @@
 ﻿using ShopSharp.Users.Application.Commands.CreateUser;
-using ShopSharp.Users.Application.Repositories;
 using ShopSharp.Users.Application.Services;
 using ShopSharp.Users.Domain.Aggregates;
 using ShopSharp.Users.Domain.Repositories;
@@ -10,13 +9,13 @@ namespace ShopSharp.Users.Application.CommandTests;
 public class CreateUserCommandHandlerTests
 {
     private readonly CreateUserCommandHandler _commandHandler;
-    private readonly IUserReadModelRepository _readModelRepository = Substitute.For<IUserReadModelRepository>();
+    private readonly IUserQueryService _userQueryService = Substitute.For<IUserQueryService>();
     private readonly IPasswordHasher _passwordHasher = Substitute.For<IPasswordHasher>();
     private readonly IUserRepository _userRepository = Substitute.For<IUserRepository>();
 
     public CreateUserCommandHandlerTests()
     {
-        _commandHandler = new CreateUserCommandHandler(_readModelRepository, _passwordHasher, _userRepository);
+        _commandHandler = new CreateUserCommandHandler(_userQueryService, _passwordHasher, _userRepository);
     }
 
     [Theory]
@@ -84,7 +83,7 @@ public class CreateUserCommandHandlerTests
         var emailAddress = $"{Guid.NewGuid()}@example.com";
         var validCommand = command with { EmailAddress = emailAddress };
 
-        _readModelRepository.ExistsByEmailAsync(
+        _userQueryService.ExistsByEmailAsync(
                 Arg.Is<EmailAddress>(email => email.Value == validCommand.EmailAddress))
             .Returns(true);
 

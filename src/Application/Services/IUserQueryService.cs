@@ -1,11 +1,11 @@
 ﻿using ShopSharp.Users.Domain.ValueObjects;
 
-namespace ShopSharp.Users.Application.Repositories;
+namespace ShopSharp.Users.Application.Services;
 
 /// <summary>
-/// Represents a read model repository for querying user data.
+/// Represents a service for querying user data.
 /// </summary>
-public interface IUserReadModelRepository
+public interface IUserQueryService
 {
     /// <summary>
     /// Checks if a user with the specified email address already exists.
