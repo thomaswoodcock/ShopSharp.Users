@@ -57,4 +57,36 @@ public class EmailAddressTests
             .Should()
             .FailWith(CreateEmailAddressError.InvalidEmailAddressFormat);
     }
+
+    [Fact]
+    public void EqualsReturnsTrueForEmailAddressesWithSameCharactersButDifferentCasing()
+    {
+        // Arrange
+        var firstResult = EmailAddress.Create("user@example.com");
+        var secondResult = EmailAddress.Create("User@EXAMPLE.com");
+
+        // Act
+        var result = firstResult.Value == secondResult.Value;
+
+        // Assert
+        result
+            .Should()
+            .BeTrue();
+    }
+
+    [Fact]
+    public void EqualsReturnsFalseForEmailAddressesWithDifferentCharacters()
+    {
+        // Arrange
+        var firstResult = EmailAddress.Create("user@example.com");
+        var secondResult = EmailAddress.Create("another.user@example.com");
+
+        // Act
+        var result = firstResult.Value == secondResult.Value;
+
+        // Assert
+        result
+            .Should()
+            .BeFalse();
+    }
 }

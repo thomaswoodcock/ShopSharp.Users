@@ -20,6 +20,12 @@ public record EmailAddress
     /// </summary>
     public string Value { get; }
 
+    /// <inheritdoc />
+    public virtual bool Equals(EmailAddress? other)
+    {
+        return other is not null && string.Equals(Value, other.Value, StringComparison.OrdinalIgnoreCase);
+    }
+
     /// <summary>
     /// Attempts to create a new <see cref="EmailAddress" /> instance with the specified value.
     /// </summary>
@@ -41,6 +47,12 @@ public record EmailAddress
         }
 
         return new EmailAddress(emailAddress);
+    }
+
+    /// <inheritdoc />
+    public override int GetHashCode()
+    {
+        return StringComparer.OrdinalIgnoreCase.GetHashCode(Value);
     }
 
     private static bool IsValidEmailAddressFormat(string emailAddress)

@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.5.1 - 2023-04-07
+
+### Changed
+
+- `EmailAddress.Equals` and `EmailAddress.GetHashCode` to ignore casing of email address value.
+
 ## v0.5.0 - 2023-04-06
 
 ### Added
